@@ -1,15 +1,14 @@
-// type User = {
-//   name: string;
-//   surname: string;
-//   email: string;
-//   password: string;
-// }
+type User = {
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
+};
 
-// function createOrUpdateUser(initialValues: User) {
-//   // Оновлення користувача
-// }
-
-// createOrUpdateUser({
-//   email: 'user@mail.com',
-//   password: 'password123'
-// });
+function createOrUpdateUser(initialValues: User, updates: Partial<User>): User {
+  return { ...initialValues, ...updates };
+}
+createOrUpdateUser({
+  email: "user@mail.com",
+  password: "password123",
+});
